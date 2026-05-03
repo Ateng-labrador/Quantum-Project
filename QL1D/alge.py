@@ -2,6 +2,13 @@ import numpy as np
 import util as constat
 
 def normaliza(delta, psi):
+    """
+    Fungsi Untuk Melakukan Normalisasi Fungsi
+
+    return:
+    psi = faktor normalisasi
+    res = hasil normalisasi
+    """
     area = 0
     for i in range(1, len(psi)-1):
         area = area + abs(psi[i])**2 *delta
@@ -17,15 +24,29 @@ def normaliza(delta, psi):
 
 
 def posision_x(delta, psi, x, pow = 1):
+    """
+    Fungsi Untuk Mencari Probabilitas Posisi Suatu Fungsi
+
+    return:
+    res = hasil kalkulasi persamaan posisi
+    """
     if pow == 1:
-        return np.sum(x * abs(psi)**2 * delta)
+        res = np.sum(x * abs(psi)**2 * delta)
+        return res
     elif pow == 2:
-        return np.sum(x**2 * abs(psi)**2 * delta)
+        res = np.sum(x**2 * abs(psi)**2 * delta)
+        return res
     else:
         return "Error"
 
 
 def momentum(delta, psi, hbar = 1, pow = 1):
+    """
+    Fungsi Untuk menentukan probabilitas momentum
+    
+    return:
+    res : hasil kalkulasi persamaan
+    """
     if pow == 1:
         res = 0 + 0j
         for i in range(1, len(psi) - 1):
@@ -43,6 +64,13 @@ def momentum(delta, psi, hbar = 1, pow = 1):
     
 
 def kinetic_energy(delta, psi, m,hbar=1):
+    """
+    Fungsi untuk menghitung energi kinetik dari fungsi gelombang
+
+
+    return:
+    res : hasil kalkulasi energi kinetik
+    """
     res = 0 + 0j
     for i in range(1, len(psi) - 1):
         d2psi_dx = (psi[i + 1] - 2*psi[i] + psi[i - 1]) / delta**2
@@ -64,4 +92,3 @@ if __name__ == "__main__":
         print("Sah")
     else:
         print("tdk sah")
-

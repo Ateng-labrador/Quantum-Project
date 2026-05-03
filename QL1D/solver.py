@@ -1,12 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
-# dpsi/dt = psi(i + 1) - psi(i) / dt
-# d^2psi/dt^2 = psi(i + 1) - 2*psi(i) + psi(i - h) / dt^2 (center)
-# i hbar dpsi/dt = -hbar^2 /2m d^2 psi / dx^2 + Vpsi
+
 
 def finite_difference(x, V, m=1, hbar=1):
     """
-    
+    Menyelesaikan persamaan shroodinger dengan metode
+    finite difference
+
     return:
     E : Eigenvalue
     psi : Eigenvector
@@ -25,22 +25,28 @@ def finite_difference(x, V, m=1, hbar=1):
         if i > 0:
             H[i, i - 1] = off
         if i < len(x) - 3:
-            H[i, i + 1] = off
+            H[i, i + 1] = off 
 
     E, psi = np.linalg.eigh(H)
 
-    # mengubah psi hasil matriks menjadi lengkap di seluruh domain x
-    # mengubah domain kembali
     psi_full = np.zeros((len(x), psi.shape[1]))
     for j in range(psi.shape[1]):
         for i in range(1, len(x) - 1):
             psi_full[i, j] = psi[i - 1, j]
 
     return E, psi_full
-    
 
-def bisection():
-    pass
 
 if __name__ == "__main__":
-    pass
+    # E psi = H psi
+    # psi = itu eigen vector
+    # H = adalah eigen value
+    N = 2000
+    y = np.linspace(0, 1, N+1)
+    
+
+    V = 1000*np.exp(-(y-0.7)**2 / (2*0.05**2))
+    # plt.plot(y, V)
+    E, psi = finite_difference(y, V)
+    plt.bar(np.arange(0, 10, 1), E[0:10])
+    plt.show()

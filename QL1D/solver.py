@@ -35,20 +35,3 @@ def finite_difference(x, V, m=1, hbar=1):
             psi_full[i, j] = psi[i - 1, j]
 
     return E, psi_full
-
-
-
-    
-
-# if __name__ == "__main__":
-#     # E psi = H psi
-#     # psi = itu eigen vector
-#     # H = adalah eigen value
-#     N = 2000
-#     y = np.linspace(0, 1, N+1)
-    
-#     V = 1000*np.exp(-(y-0.7)**2 / (2*0.05**2))
-#     # plt.plot(y, V)
-#     E, psi = finite_difference(y, V)
-#     plt.bar(np.arange(0, 10, 1), E[0:10])
-#     plt.show()

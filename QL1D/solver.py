@@ -37,6 +37,9 @@ def finite_difference(x, V, m=1, hbar=1):
     return E, psi_full
 
 
+
+    
+
 # if __name__ == "__main__":
 #     # E psi = H psi
 #     # psi = itu eigen vector

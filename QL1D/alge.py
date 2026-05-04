@@ -1,5 +1,4 @@
 import numpy as np
-import util as constat
 
 def normaliza(delta, psi):
     """
@@ -76,19 +75,3 @@ def kinetic_energy(delta, psi, m,hbar=1):
         d2psi_dx = (psi[i + 1] - 2*psi[i] + psi[i - 1]) / delta**2
         res += np.conj(psi[i]) * d2psi_dx * delta
     return (-hbar**2 / 2*m) * res
-
-
-if __name__ == "__main__":
-    x = np.linspace(-5, 5, 1000)
-    psi = np.exp(-x**2)
-    delta = x[1] - x[0]
-    psi, res = normaliza(delta, psi)
-    # hasil = posision_x(delta, psi, x)
-    # momen = momentum(delta, psi)
-    # kinetik = kinetic_energy(delta, psi, 2)
-    sigma_x = np.sqrt(posision_x(delta, psi, x, pow=2) - posision_x(delta, psi, x)**2)
-    sigma_p = np.sqrt(momentum(delta, psi, pow=2) - momentum(delta, psi)**2)
-    if sigma_p*sigma_x >= constat.hbar/2:
-        print("Sah")
-    else:
-        print("tdk sah")

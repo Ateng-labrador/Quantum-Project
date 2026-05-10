@@ -39,6 +39,7 @@ def posision_x(delta, psi, x, pow = 1):
         return "Error"
 
 
+# perbaiki momentum
 def momentum(delta, psi, hbar = 1, pow = 1):
     """
     Fungsi Untuk menentukan probabilitas momentum
@@ -50,13 +51,13 @@ def momentum(delta, psi, hbar = 1, pow = 1):
         res = 0 + 0j
         for i in range(1, len(psi) - 1):
             dpsi_dx = (psi[i+1] - psi[i-1]) / (2*delta)
-            res += np.conj(psi[i] * (-1j * hbar * dpsi_dx)) * delta
+            res += np.conj(psi[i]) * (-1j * hbar * dpsi_dx) * delta
         return res
     elif pow == 2:
         res = 0 + 0j
         for i in range(1, len(psi) - 1):
             d2psi_dx2 = (psi[i + 1] - 2*psi[i] + psi[i - 1])/delta**2
-            res += np.conj(psi[i] * (-hbar**2 * d2psi_dx2)**2) * delta
+            res += np.conj(psi[i]) * (-hbar**2 * d2psi_dx2) * delta
         return res
     else:
         return "error"

@@ -28,10 +28,25 @@ def finite_difference(x, V, m=1, hbar=1):
             H[i, i + 1] = off 
 
     E, psi = np.linalg.eigh(H)
-
+    
     psi_full = np.zeros((len(x), psi.shape[1]))
     for j in range(psi.shape[1]):
         for i in range(1, len(x) - 1):
             psi_full[i, j] = psi[i - 1, j]
 
-    return E, psi_full
+    # check normalize
+    res = np.sum(abs(psi_full)**2 * deltax)
+
+    return E, psi_full, res
+
+def psi_m2(t, E, psi, psi0):
+    """
+    t = waktu evolusi
+    E = Energi Eigen Value
+    psi = Eigen State
+    psi0 = Keadaana Awal
+    """
+    E_js = E
+    cs = np.dot(psi.T, psi0)
+    sigma = psi@(cs*np.exp(-1j*E_js*t))
+    return np.abs(sigma)**2

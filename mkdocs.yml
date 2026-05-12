@@ -1,0 +1,34 @@
+site_name: Quantum Library 1 Dimension
+site_description: Documentation For QL1D Library
+site_url : https://mydomain.org/index.md
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+nav:
+  - Konten:
+    - Pengenalan: home.md
+  - Pentunjuk:
+    - Install: petunjuk-install.md
+  - Dokumentasi:
+    - Solver: solver.md
+    - Alge: alge.md
+  - Contoh:
+    - Finiti Potensial: contoh-finite.md
+    - Gaussian Potensial: contoh-gaussian.md
+    - Infinite Potensial: contoh-infinite.md
+    - Harmonik Potensial: contoh-harmonik.md
+  - Miscellaneous:
+    - About: about.md
+theme:
+  name: readthedocs
+  color_mode: dark
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: false
+            show_signature: true
+            docstring_style: numpy
+            docstring_section_style: list

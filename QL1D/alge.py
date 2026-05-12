@@ -1,12 +1,31 @@
 import numpy as np
 
 def normaliza(delta, psi):
-    """
-    Fungsi Untuk Melakukan Normalisasi Fungsi
+    """Normalisasi fungsi gelombang.
 
-    return:
-    psi = faktor normalisasi
-    res = hasil normalisasi
+    Parameters
+    ----------
+    delta : float
+        Spasi grid.
+    psi : array_like
+        Nilai fungsi gelombang.
+
+    Returns
+    -------
+    psi : ndarray
+        Fungsi gelombang yang telah dinormalisasi.
+    res : float
+        Nilai pengecekan normalisasi (jumlah |psi|^2 * delta).
+
+    Examples
+    --------
+    >>> import numpy as np
+    >>> x = np.linspace(-5, 5, 100)
+    >>> delta = x[1] - x[0]
+    >>> psi = np.exp(-(x**2) / 2)  # Fungsi Gaussian
+    >>> psi_norm, res = normaliza(delta, psi)
+    >>> ress
+    1.0000000000015827
     """
     area = 0
     for i in range(1, len(psi)-1):
@@ -23,11 +42,33 @@ def normaliza(delta, psi):
 
 
 def posision_x(delta, psi, x, pow = 1):
-    """
-    Fungsi Untuk Mencari Probabilitas Posisi Suatu Fungsi
+    """Hitung nilai ekspektasi posisi.
 
-    return:
-    res = hasil kalkulasi persamaan posisi
+    Parameters
+    ----------
+    delta : float
+        Spasi grid.
+    psi : array_like
+        Nilai fungsi gelombang.
+    x : array_like
+        Grid posisi.
+    pow : int, optional
+        Pangkat nilai ekspektasi. ``1`` untuk <x>, ``2`` untuk <x^2>.
+
+    Returns
+    -------
+    res : float
+        Nilai ekspektasi posisi atau momen kedua.
+
+    Examples
+    --------
+    >>> import numpy as np
+    >>> x = np.linspace(-5, 5, 100)
+    >>> delta = x[1] - x[0]
+    >>> psi = np.exp(-(x**2) / 2) / (np.pi**0.25)  # Gaussian ternormalisasi
+    >>> posisi_mean = posision_x(delta, psi, x, pow=1)
+    >>> posisi_var = posision_x(delta, psi, x, pow=2)
+    <x> = 0.000000, <x^2> = 0.500000
     """
     if pow == 1:
         res = np.sum(x * abs(psi)**2 * delta)
@@ -39,13 +80,39 @@ def posision_x(delta, psi, x, pow = 1):
         return "Error"
 
 
-# perbaiki momentum
+
 def momentum(delta, psi, hbar = 1, pow = 1):
-    """
-    Fungsi Untuk menentukan probabilitas momentum
+    """Hitung nilai ekspektasi momentum atau momen operator momentum.
+
+    Parameters
+    ----------
+    delta : float
+        Spasi grid.
+    psi : array_like
+        Nilai fungsi gelombang.
+    hbar : float, optional
+        Konstanta Planck tereduksi. Default adalah 1.
+    pow : int, optional
+        Pangkat operator: ``1`` untuk nilai ekspektasi momentum, ``2`` untuk operator turunan kedua.
+
+    Returns
+    -------
+    res : complex
+        Nilai ekspektasi momentum atau momen terkait momentum.
+
+    Examples
+    --------
+    >>> import numpy as np
+    >>> x = np.linspace(-5, 5, 100)
+    >>> delta = x[1] - x[0]
+    >>> psi = np.exp(-(x**2) / 2)  # Fungsi Gaussian
+    >>> p_exp = momentum(delta, psi, hbar=1, pow=1)
+    >>> p2_exp = momentum(delta, psi, hbar=1, pow=2)
+    >>> p_exp
+    >>> -1.3970501884714543e-17j 
+    >>> p_2_exp
+    >>> (0.8850976098180809+0j)
     
-    return:
-    res : hasil kalkulasi persamaan
     """
     if pow == 1:
         res = 0 + 0j
@@ -61,15 +128,36 @@ def momentum(delta, psi, hbar = 1, pow = 1):
         return res
     else:
         return "error"
-    
-
-def kinetic_energy(delta, psi, m,hbar=1):
-    """
-    Fungsi untuk menghitung energi kinetik dari fungsi gelombang
 
 
-    return:
-    res : hasil kalkulasi energi kinetik
+def energi_kinetik(delta, psi, m, hbar=1):
+    """Hitung nilai ekspektasi energi kinetik.
+
+    Parameters
+    ----------
+    delta : float
+        Spasi grid.
+    psi : array_like
+        Nilai fungsi gelombang.
+    m : float
+        Massa partikel.
+    hbar : float, optional
+        Konstanta Planck tereduksi. Default adalah 1.
+
+    Returns
+    -------
+    res : complex
+        Nilai ekspektasi energi kinetik.
+
+    Examples
+    --------
+    >>> import numpy as np
+    >>> x = np.linspace(-5, 5, 100)
+    >>> delta = x[1] - x[0]
+    >>> psi = np.exp(-(x**2) / 2)  # Fungsi Gaussian
+    >>> E_k = energi_kinetik(delta, psi, m=1, hbar=1)
+    >>> E_k
+    >>> (0.44254880490904047-0j)
     """
     res = 0 + 0j
     for i in range(1, len(psi) - 1):

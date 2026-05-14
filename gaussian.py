@@ -7,36 +7,6 @@ import matplotlib.pyplot as plt
 x = np.linspace(0, 1, 301)
 V = -1e-2*np.exp(-(x-1/2)**2/(2*(1/20)**2))
 psi0 = np.sqrt(2)*np.sin(np.pi*x)
-# plt.plot(x, V)
 
 #mencari potensial
 E, psi, norm = qd.solver.finite_difference(x, V)
-
-# print(norm)
-# bikin dokumentasi
-# #plot state
-# plt.plot(psi.T[0]**2)
-# plt.plot(psi.T[1]**2)
-# plt.plot(psi.T[2]**2)
-# plt.plot(psi.T[3]**2)
-
-# plot energi
-# plt.bar(np.arange(0, 200, 1), E[0:200])
-
-# mencari solusi TDSE
-# E_js = E
-# cs = np.dot(psi.T, psi0)
-# def psi_m2(t):
-#     return psi@(cs*np.exp(-1j*E_js*t))
-
-gtest = qd.solver.psi_m2(0.01, E, psi, psi0)
-# tespsi_m2 = psi@(cs*np.exp(-1j*E_js*0.01))
-
-
-
-# g = np.abs(psi_m2(0.01))**2
-
-# plt.plot(x, psi0**2)
-# plt.plot(x, gtest)
-# plt.show()
-# print(gtest)

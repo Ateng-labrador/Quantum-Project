@@ -1,5 +1,9 @@
 # QL1D Documentation
 
+<div align="center">
+<img src="assets/gambar_gaussian.png" alt="QL1D Documentation" width="50%">
+</div>
+
 Quantum Library 1 Dimensi adalah sebuah library python untuk menyelesaikan persamaan Schrödinger 1 dimensi, baik:
 
 1. Time Independent Schrödinger Equation (TISE)
@@ -19,6 +23,3 @@ QL1D dirancang untuk membantu pembelajaran mekanika kuantum melalui simulasi num
 
  -->
 ### Dokumentasi
-
-
-

@@ -5,6 +5,8 @@ markdown_extensions:
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
 nav:
   - Konten:
     - Pengenalan: home.md
@@ -32,3 +34,11 @@ plugins:
             show_signature: true
             docstring_style: numpy
             docstring_section_style: list
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0.16.0/dist/katex.min.js
+  - https://unpkg.com/katex@0.16.0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0.16.0/dist/katex.min.css

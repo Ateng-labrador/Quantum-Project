@@ -27,6 +27,10 @@ nav:
 theme:
   name: material
   color_mode: dark
+  theme:
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
 plugins:
   - mkdocstrings:
       handlers:

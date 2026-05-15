@@ -1,6 +1,7 @@
 site_name: Quantum Library 1 Dimension
 site_description: Documentation For QL1D Library
-site_url : https://mydomain.org/index.md
+site_url: https://ateng-labrador.github.io/Quantum-Project/
+docs_dir: docs
 markdown_extensions:
   - def_list
   - pymdownx.tasklist:
@@ -24,7 +25,7 @@ nav:
   - Miscellaneous:
     - About: about.md
 theme:
-  name: readthedocs
+  name: material
   color_mode: dark
 plugins:
   - mkdocstrings:

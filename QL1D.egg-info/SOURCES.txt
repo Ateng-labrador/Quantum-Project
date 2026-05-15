@@ -1,0 +1,11 @@
+LICENSE
+setup.py
+QL1D/__init__.py
+QL1D/alge.py
+QL1D/solver.py
+QL1D/util.py
+QL1D.egg-info/PKG-INFO
+QL1D.egg-info/SOURCES.txt
+QL1D.egg-info/dependency_links.txt
+QL1D.egg-info/requires.txt
+QL1D.egg-info/top_level.txt

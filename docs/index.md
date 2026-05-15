@@ -11,15 +11,3 @@ Quantum Library 1 Dimensi adalah sebuah library python untuk menyelesaikan persa
 
 QL1D dirancang untuk membantu pembelajaran mekanika kuantum melalui simulasi numerik, visualisasi fungsi gelombang, dan eksplorasi berbagai bentuk potensial kuantum.
 
-
-<!-- Dokumentasi Section
-    - instalasi
-    - Memulai
-    - TISE Solver
-    - TDSE Solver
-    - Potentials
-    - Visualization
-    - Examples
-
- -->
-### Dokumentasi

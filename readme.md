@@ -27,3 +27,5 @@ pip install QL1D==0.2.0
 ```
 
 Informasi:
+
+Silahkan melihat [Wiki](https://ateng-labrador.github.io/Quantum-Project/) untuk dokumentasi dan contoh penggunaannya

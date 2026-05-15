@@ -1,7 +1,6 @@
 site_name: Quantum Library 1 Dimension
 site_description: Documentation For QL1D Library
 site_url: https://ateng-labrador.github.io/Quantum-Project/
-docs_dir: docs
 theme:
   name: readthedocs
   color_mode: dark

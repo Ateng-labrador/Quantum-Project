@@ -1,5 +1,7 @@
 # Potensial Infinite
 
+Potensial infinite (infinite potential well) merupakan model dasar dalam mekanika kuantum yang digunakan untuk menggambarkan partikel yang terkungkung sempurna di dalam suatu daerah ruang. Pada model ini, potensial di luar daerah sumur bernilai tak hingga sehingga partikel tidak dapat keluar dari wilayah tersebut.
+
 Potensial Infinite didefinisikan sebagai:
 
 $$
@@ -10,6 +12,8 @@ V(x) =
 \end{cases}
 $$
 
+Karena partikel terjebak sempurna di dalam sumur, solusi Persamaan Schrödinger menghasilkan tingkat energi yang terkuantisasi.
+
 Energi pada infinite:
 
 $$
@@ -18,13 +22,13 @@ $$
 
 $n = 1, 2, 3, ..., i$
 
+Setiap nilai n merepresentasikan keadaan kuantum yang berbeda, di mana energi partikel hanya dapat berada pada nilai-nilai tertentu dan tidak kontinu
+
 $\Psi_0$ didefinisikan sebagai:
 
 $$
 \Psi_0(y) = \sqrt{2}\sin{(y \pi)}
 $$
-
-
 
 
 **Setup Invorment**

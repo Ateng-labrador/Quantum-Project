@@ -1,6 +1,8 @@
 # Potensial Gaussian
 
-Potensial Gaussian didefinisikan sebagai:
+Potensial Gaussian merupakan salah satu bentuk potensial halus (smooth potential) yang sering digunakan dalam mekanika kuantum untuk memodelkan interaksi lokal tanpa diskontinuitas tajam. Berbeda dengan potensial kotak, potensial Gaussian berubah secara kontinu sehingga lebih stabil untuk simulasi numerik dan sering digunakan pada studi dinamika paket gelombang kuantum.
+
+Pada contoh ini digunakan potensial Gaussian berbentuk sumur dengan pusat di $x=0.5$ dan lebar tertentu yang dikontrol oleh parameter deviasi standar. Potensial didefinisikan sebagai:
 
 $$
 V(x) = -0.01 \exp\left( -\frac{(x - 0.5)^2}{2 \cdot (0.05)^2} \right)

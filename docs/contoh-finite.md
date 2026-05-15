@@ -1,11 +1,15 @@
 # Potensial Finite
 
+Potensial finite (finite potential well) merupakan model dasar dalam mekanika kuantum yang digunakan untuk merepresentasikan partikel yang terjebak pada suatu daerah dengan energi potensial tertentu. Berbeda dengan potensial infinite, pada potensial finite partikel masih memiliki kemungkinan untuk berada di luar daerah sumur akibat efek tunneling kuantum.
+
+Pada contoh ini digunakan potensial berbentuk sumur persegi satu dimensi dengan kedalaman tertentu pada daerah $∣x∣<0.2$. Potensial didefinisikan sebagai:
+
 $$
-V(x)=
-    \begin{case}
-        50, |y| < 0.2 \\
-        + 0, |y| >= 0.2 &
-    \end{case}
+V(x) = 
+\begin{cases}
+    50, &  |y| =< 0.2 \\
+    + 0, & |y| >= 0.2.
+\end{cases}
 $$
 
 
@@ -34,7 +38,7 @@ plt.plot(y, V)
 plt.grid()
 plt.show()
 ```
-[!Potensial Finite](assets/finiteSquareWell/Grafik%20Energi.png)
+![Potensial Finite](assets/finiteSquareWell/Grafik%20Energi.png)
 
 
 **Menyelesaikan Persamaan Shroodingern TISE**
@@ -61,7 +65,7 @@ plt.grid()
 plt.show()
 ```
 
-[!Potensial Finite](assets/finiteSquareWell/GrafikPotensial.png)
+![Potensial Finite](assets/finiteSquareWell/GrafikPotensial.png)
 
 
 **Grafik Probabilitas TISE**
@@ -76,7 +80,7 @@ plt.plot(y, psi.T[3]**2)
 plt.grid()
 plt.show()
 ```
-[!Potensial Finite](assets/finiteSquareWell/ProbabilitasTISE.png)
+![Potensial Finite](assets/finiteSquareWell/ProbabilitasTISE.png)
 
 
 **Menyelesaikan Persamaan Shroodingern TDSE**
@@ -93,4 +97,4 @@ plt.plot(y, abs(g)**2)
 plt.grid()
 plt.show()
 ```
-[!Potensial Finite](assets/finiteSquareWell/ProbabilitasTDSE.png)
+![Potensial Finite](assets/finiteSquareWell/ProbabilitasTDSE.png)

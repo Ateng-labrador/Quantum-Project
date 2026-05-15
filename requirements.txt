@@ -1,0 +1,3 @@
+mkdocs-material
+mkdocstrings
+numpy>=2.4.4

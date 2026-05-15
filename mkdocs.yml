@@ -2,6 +2,15 @@ site_name: Quantum Library 1 Dimension
 site_description: Documentation For QL1D Library
 site_url: https://ateng-labrador.github.io/Quantum-Project/
 docs_dir: docs
+theme:
+  name: material
+  color_mode: dark
+  theme:
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant
+    - navigation.instant.progress
 markdown_extensions:
   - def_list
   - pymdownx.tasklist:
@@ -24,13 +33,6 @@ nav:
     - Harmonik Potensial: contoh-harmonik.md
   - Miscellaneous:
     - About: about.md
-theme:
-  name: material
-  color_mode: dark
-  theme:
-  features:
-    - navigation.instant
-    - navigation.instant.prefetch
 plugins:
   - mkdocstrings:
       handlers:

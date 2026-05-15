@@ -11,16 +11,13 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant
     - navigation.instant.progress
-markdown_extensions:
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.arithmatex:
-      generic: true
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
 nav:
   - Home: index.md
   - Konten:
-    - Pengenalan: home.md
+    - Pengenalan: Konten/home.md
   - Pentunjuk:
     - Install: petunjuk-install.md
   - Dokumentasi:

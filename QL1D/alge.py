@@ -29,7 +29,7 @@ def normaliza(delta, psi):
     """
     area = 0
     for i in range(1, len(psi)-1):
-        area = area + abs(psi[i])**2 *delta
+        area += abs(psi[i])**2 *delta
     
     # mencari faktor normalisasi
     for i in range(len(psi)):
@@ -130,7 +130,7 @@ def momentum(delta, psi, hbar = 1, pow = 1):
         return "error"
 
 
-def energi_kinetik(delta, psi, m, hbar=1):
+def energi_kinetik(delta, psi, m = 1, hbar=1):
     """Hitung nilai ekspektasi energi kinetik.
 
     Parameters

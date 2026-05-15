@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-
 
 def finite_difference(x, V, m=1, hbar=1):
     """Selesaikan persamaan Schrödinger dengan metode beda hingga.
